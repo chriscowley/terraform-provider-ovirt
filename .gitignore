@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 terraform-provider-ovirt
-=======
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
@@ -25,4 +23,3 @@ _testmain.go
 *.exe
 *.test
 *.prof
->>>>>>> c8cfe98016aabccb9229efa5d47a204b421010e5
