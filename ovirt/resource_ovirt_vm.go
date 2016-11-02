@@ -23,6 +23,54 @@ func resourceOVirtVM() *schema.Resource {
                 Required: true,
                 ForceNew: true,
             },
+            "vcpus": &schema.Schema{
+                Type: schema.TypeString,
+                Required: false,
+                ForceNew: true,
+                Default: 1,
+            },
+            "nic": &schema.Schema{
+                Type: schema.TypeList,
+                Required: false,
+                ForceNew: true,
+                Elem: &schema.Resource{
+                    "profile": &schema.Schema{
+                        Type: schema.TypeString,
+                        Required: true
+                    },
+                },
+            },
+            "volumes": &schema.Schema{
+                Type: schema.TypeList,
+                Required: false,
+                ForceNew: true,
+                Elem: &schema.Resource{
+                    "size": &schema.Schema{
+                        Type: schema.TypeInt,
+                        required: true,
+                    },
+                    "interface": &schema.Schema{
+                        Type: schema.TypeString,
+                        Optional: true,
+                        Default: "VirtIO",
+                        ForceNew: true,
+                    },
+                    "domain": &schema.Schema{
+                        Type: schema.TypeString,
+                        Required: true,
+                    },
+                    "thin": &schema.Schema{
+                        Type: schema.TypeBool,
+                        Optional: true,
+                        Default: true,
+                        ForceNew: true,
+                    },
+                    "profile": &schema.Schema{
+                        Type: schema.TypeString,
+                        Required: true,
+                    },
+                },
+            },
         },
     }
 }
