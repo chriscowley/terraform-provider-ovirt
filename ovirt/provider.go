@@ -3,6 +3,7 @@ package ovirt
 import (
         "github.com/hashicorp/terraform/helper/schema"
         "github.com/hashicorp/terraform/terraform"
+        "net/http"
 )
 
 func Provider() terraform.ResourceProvider {
